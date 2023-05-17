@@ -1,7 +1,7 @@
 const express = require ('express')
 const router = express.Router()
 
-const readListCtrl = require('../controllers/read-lists')
+const readListCtrl = require('../controllers/books')
 
 router.get('/', readListCtrl.index)
 router.get('/new', readListCtrl.newReadList)
