@@ -24,6 +24,7 @@ function create (req, res, next)    {
 
 function show (req, res, next) {
     ReadList.findById(req.params.id)
+        // .then(console.log)
         .then(readList => {
             res.render('read-lists/show', {
                 readList,
@@ -48,7 +49,7 @@ function updateReadListForm(req, res, next) {
 function update(req, res, next) {
     ReadList.findById(req.params.id)
     .then(readList => {
-        if (!readList.user.equals(req.use._id)) throw new Error('Unauthorized')
+        if (!readList.user.equals(req.user._id)) throw new Error('Unauthorized')
         return readList.updateOne(req.body)
     })
     .then(() => res.redirect(`/read-lists/${req.params.id}`))
@@ -58,10 +59,10 @@ function update(req, res, next) {
 function deleteReadList(req, res, next) {
      ReadList.findById(req.params.id)
      .then(readList => {
-        if (!readList.user.equals(req.use._id)) throw new Error('Unauthorized')
+        if (!readList.user.equals(req.user._id)) throw new Error('Unauthorized')
         return readList.deleteOne(req.body)
     })
-    .then(() => res.redirect(`/read-lists/${req.params.id}`))
+    .then(() => res.redirect(`/read-lists/`))
     .catch(next)
 }
 
