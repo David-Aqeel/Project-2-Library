@@ -1,15 +1,18 @@
 const express = require ('express')
 const router = express.Router()
 
-const readListCtrl = require('../controllers/books')
+const bookCtrl = require('../controllers/books')
 
-router.get('/', readListCtrl.index)
-router.get('/new', readListCtrl.newReadList)
-router.post('/', readListCtrl.create)
-router.get('/:id',readListCtrl.show)
-router.get('/:id/edit',readListCtrl.updateReadListForm)
-router.put('/:id/',readListCtrl.update)
-router.delete('/:id/',readListCtrl.deleteReadList)
+// localhost:3000/books/
+router.get('/', bookCtrl.index)
+// router.get('/new', bookCtrl.newBook)
+router.post('/', bookCtrl.addBook)
+
+
+router.get('/:id',bookCtrl.show)
+// router.get('/:id/edit',bookCtrl.updateBook)
+// router.put('/:id/',bookCtrl.update)
+// router.delete('/:id/',bookCtrl.deleteBook)
 
 
 module.exports = router 
