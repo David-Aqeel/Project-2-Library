@@ -1,11 +1,28 @@
 A README.md file with these sections:
 
-☐ App Title: Contains a description of what the app does and optional background info.
+#Library App
 
-☐ Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest.
+## App Title: Library: 
 
-☐ Technologies Used: List of the technologies used.
+This app is for readers! It helps you create lists of books for reading. You can make a list for books read, books you are currently reading, and books you want to read.
 
-☐ Getting Started: Include a link to the deployed app and your Trello board with the project's planning.
+## Screenshot(s): A screenshot of your app's landing page and any other screenshots of interest. 
 
-☐ Next Steps: Planned future enhancements (icebox items).
+![Screenshot 1](http)
+
+## Technologies Used: 
+
+1. HTML5
+2. Javascript
+3. Mongoose
+4. Express
+5. Node
+
+## Getting Started: 
+
+Include a link to the deployed app and your Trello board with the project's planning.
+
+## Next Steps: 
+
+Planned future enhancements (icebox items).
+
