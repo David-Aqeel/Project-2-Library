@@ -17,8 +17,8 @@
         <% }); %>
 </ul>
 
-<form action="/books/<%= readList.id %>" method="POST">
-    <input type="text" name="name">
+<form action="/books/<%= readList._id %>" method="POST">
+    <input type="text" name="name" id="name">
     <button type="submit">Add Book</button>
 </form>
 

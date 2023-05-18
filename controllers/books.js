@@ -1,4 +1,5 @@
 const Book = require('../models/book')
+const ReadList = require('../models/read-list')
 
 function index(req, res, next)  {
     Book.find({user: req.user._id})
@@ -15,7 +16,7 @@ function index(req, res, next)  {
 function show (req, res, next) {
     Book.findById(req.params.id)
         .then(book => {
-            res.render('library/show', {
+            res.render('books/show', {
                 book,
                 title: 'Book Details'
             })
@@ -23,26 +24,20 @@ function show (req, res, next) {
         .catch(next)
 }
 
-function create (req, res, next)    {
-    req.body.user = req.user._id
-    Book.create(req.body)
-        .then(() => res.redirect('/read-lists'))
-        .catch(next)
-}
-
 
 function addBook (req, res, next)    {
    ReadList.findById(req.params.listId)
+   //.then(console.log)
    .then (readList => {
         readList.books.push(req.body)
 
         return readList.save()
    })
-   .then(() => res.redirect(`read-lists/${req.params.listId}`))
+   .then(() => res.redirect(`/read-lists/${req.params.listId}`))
    .catch(next)
 }
 
-function updateReadListForm(req, res, next) {
+function updateBook(req, res, next) {
     ReadList.findById(req.params.id)
     .then(readList => {
         res.render('read-lists/edit', {
@@ -64,13 +59,16 @@ function update(req, res, next) {
     .catch(next)
 }
 
-function deleteReadList(req, res, next) {
-     ReadList.findById(req.params.id)
+function deleteBook(req, res, next) {
+     ReadList.findById(req.params.listId)
+    //  .then(console.log)
      .then(readList => {
         if (!readList.user.equals(req.user._id)) throw new Error('Unauthorized')
-        return readList.deleteOne(req.body)
+       // return readList.deleteOne(req.params.bookId)
+       readList.books.id(req.params.bookId).deleteOne()
+       return readList.save()
     })
-    .then(() => res.redirect(`/read-lists/`))
+    .then(() => res.redirect('/read-lists'))
     .catch(next)
 }
 
@@ -78,5 +76,8 @@ function deleteReadList(req, res, next) {
 module.exports = {
     index,
     show,
-    addBook
+    addBook,
+    updateBook,
+    update,
+    deleteBook
 }
