@@ -1,8 +1,0 @@
-<%- include('../partials/header') %>
-
-<form action="/books/<%= book.id %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="name" value="<%= book.name %>">
-    <button type="submit">Update Books List</button>
-</form>
-
-<%- include('../partials/footer') %>

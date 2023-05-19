@@ -1,1 +1,29 @@
 
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.link {
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+
+ul {
+    list-style: none;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ .item button {
+    font-size: 10px;
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
