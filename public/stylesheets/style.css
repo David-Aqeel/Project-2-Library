@@ -21,9 +21,10 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
   }
   
  .item button {
     font-size: 10px;
-    margin-right: 5px; /* Adjust the margin as needed */
+    margin-right: 5px; 
   }

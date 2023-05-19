@@ -47,7 +47,7 @@ Then you can click into the list and add/remove books, and edit the list name.
 
 ## Next Steps: 
 
-Planned future enhancements (icebox items).
+Planned future enhancements (icebox items):
 
 I plan on adding more book details other than the name, for example 'Author'.
 
