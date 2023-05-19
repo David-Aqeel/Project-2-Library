@@ -10,11 +10,11 @@
             <li>
                 <div class="item">
                     <form action="/books/<%= readList.id %>/<%= book.id %>?_method=DELETE" method="POST">
+                        <p>
+                            <%= book.name %>
+                        </p>
+                        <button type="submit">X</button>
                     </form>
-                    <h5>
-                        <%= book.name %>
-                    </h5>
-                    <button type="submit">X</button>
                 </div>
             </li>
             <% }); %>

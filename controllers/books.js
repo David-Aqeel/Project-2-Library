@@ -12,7 +12,6 @@ function index(req, res, next)  {
         .catch(next)
 }
 
-
 function show (req, res, next) {
     Book.findById(req.params.id)
         .then(book => {
@@ -23,7 +22,6 @@ function show (req, res, next) {
         }) 
         .catch(next)
 }
-
 
 function addBook (req, res, next)    {
    ReadList.findById(req.params.listId)
@@ -44,9 +42,7 @@ function updateBook(req, res, next) {
             readList,
             title: 'Reading List Edit Details'
         })
-    })
-   
-        
+    })   
 }
 
 function update(req, res, next) {

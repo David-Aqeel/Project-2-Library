@@ -6,19 +6,21 @@
 
 <div class="link">
     <h3>
-        <a href="/read-lists/new"  >Add a Reading List</a>
+        <a href="/read-lists/new">Add a Reading List</a>
     </h3>
 </div>
 <div class="link">
     <ul>
         <% readLists.forEach(function(readList) { %>
             <li>
-                <form action="/read-lists/<%= readList.id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
-                <a href="/read-lists/<%= readList.id %>">
-                    <%= readList.name %>
-                </a>
+                <div class="item">
+                    <form action="/read-lists/<%= readList.id %>?_method=DELETE" method="POST">
+                        <a href="/read-lists/<%= readList.id %>">
+                            <%= readList.name %>
+                        </a>
+                        <button type="submit">X</button>
+                    </form>
+                </div>
             </li>
             <% }); %>
     </ul>
