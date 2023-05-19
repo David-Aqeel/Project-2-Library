@@ -27,10 +27,11 @@ You can name them as you see fit.
 2. Javascript
 3. Mongoose
 4. Express
-5. Node
+5. Node.js
 6. Bootstrap
 7. OAuth
 8. CSS
+9. Fly.io
 
 
 ## Getting Started: 
@@ -52,5 +53,7 @@ Planned future enhancements (icebox items):
 I plan on adding more book details other than the name, for example 'Author'.
 
 I would like to make a review page for each book, and a checklist system that automatically transfers books from 'To Read' to 'Reading' to 'Already Read'.
+
+Add some legendary CSS.
 
 
